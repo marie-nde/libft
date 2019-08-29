@@ -11,8 +11,13 @@ int		ft_atoi(const char *nptr);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isascii(int c);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
+char	*ft_strstr(const char *haystack, const char *needle);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
 #endif
