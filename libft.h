@@ -30,5 +30,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+void	ft_putchar(char c);
+void	ft_putstr(const char *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 
 #endif

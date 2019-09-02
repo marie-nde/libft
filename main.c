@@ -8,75 +8,132 @@ int		main(int ac, char **av)
 {
 	if (ac == 2)
 	{
+		char a = av[1][0];
+		char b = av[1][0];
+		char c = av[1][0];
+		char d = av[1][0];
+	
+		ft_putstr("### ft_putchar ###\n");
+		ft_putstr("Test with the first character of the first argument.\n");
+		ft_putstr("Your result : ");
+		ft_putchar(av[1][0]);
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putstr ###\n");
+		ft_putstr("Test with the first argument.\n");
+		ft_putstr("Your result : ");
+		ft_putstr(av[1]);
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putendl ###\n");
+		ft_putstr("Test with the first argument.\n");
+		ft_putstr("Your result : ");
+		ft_putendl(av[1]);
+		ft_putstr("\n");
+
+		ft_putstr("### ft_putnbr ###\n");
+		ft_putstr("Test with the first argument (int).\n");
+		ft_putstr("Your result : ");
+		ft_putnbr(atoi(av[1]));
+		ft_putstr("\n\n");
+
 		write(1, "### ft_strlen ###\n", 18);
 		write(1, "Test with the first argument.\n", 30);
 		write(1, "Result expected : ", 18);
-		printf("%ld\n", strlen(av[1]));
+		ft_putnbr(strlen(av[1]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%ld\n\n", ft_strlen(av[1]));
+		ft_putnbr(ft_strlen(av[1]));
+		ft_putstr("\n\n");
 
-		write(1, "### ft_strdup ###", 18);
+		write(1, "### ft_strdup ###\n", 18);
 		write(1, "Test with the first argument.\n", 30);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strdup(av[1]));
+		ft_putstr(strdup(av[1]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strdup(av[1]));
+		ft_putstr(ft_strdup(av[1]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_atoi ###", 15);
 		write(1, "Test with the first argument.\n", 30);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", atoi(av[1]));
+		ft_putnbr(atoi(av[1]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_atoi(av[1]));
+		ft_putnbr(ft_atoi(av[1]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_isalpha ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", isalpha(av[1][0]));
+		ft_putnbr(isalpha(av[1][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_isalpha(av[1][0]));
+		ft_putnbr(ft_isalpha(av[1][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_isdigit ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", isdigit(av[1][0]));
+		ft_putnbr(isdigit(av[1][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_isdigit(av[1][0]));
+		ft_putnbr(ft_isdigit(av[1][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_isalnum ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", isalnum(av[1][0]));
+		ft_putnbr(isalnum(av[1][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_isalnum(av[1][0]));
+		ft_putnbr(ft_isalnum(av[1][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_isascii ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", isascii(av[1][0]));
+		ft_putnbr(isascii(av[1][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_isascii(av[1][0]));
+		ft_putnbr(ft_isascii(av[1][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_isprint ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d\n", isprint(av[1][0]));
+		ft_putnbr(isprint(av[1][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d\n\n", ft_isprint(av[1][0]));
+		ft_putnbr(ft_isprint(av[1][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_toupper ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d = %c\n", toupper(av[1][0]), av[1][0]);
+		ft_putnbr(toupper(a));
+		ft_putstr(" = ");
+		ft_putchar(toupper(b));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d = %c\n\n", ft_toupper(av[1][0]), av[1][0]);
+		ft_putnbr(ft_toupper(b));
+		ft_putstr(" = ");
+		ft_putchar(ft_toupper(b));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_tolower ###\n", 19);
 		write(1, "Test with the first character of the first argument.\n", 53);
 		write(1, "Result expected : ", 18);
-		printf("%d = %c\n", tolower(av[1][0]), av[1][0]);
+		ft_putnbr(tolower(c));
+		ft_putstr(" = ");
+		ft_putchar(tolower(c));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%d = %c\n\n", ft_tolower(av[1][0]), av[1][0]);
+		ft_putnbr(ft_tolower(d));
+		ft_putstr(" = ");
+		ft_putchar(ft_tolower(d));
+		ft_putstr("\n\n");
 	}
 	if (ac == 3)
 	{
@@ -101,46 +158,58 @@ int		main(int ac, char **av)
 		write(1, "### ft_strcpy ###\n", 18);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strcpy(cpy3, cpy4));
+		ft_putstr(strcpy(cpy3, cpy4));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strcpy(cpy, cpy2));
+		ft_putstr(ft_strcpy(cpy, cpy2));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strcat ###\n", 18);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strcat(cat, cat2));
+		ft_putstr(strcat(cat, cat2));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strcat(cat3, cat4));
+		ft_putstr(ft_strcat(cat3, cat4));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strstr ###\n", 18);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
-/*		printf("%s\n", strstr(av[1], av[2]));*/
+		ft_putstr(strstr(av[1], av[2]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strstr(av[1], av[2]));
+		ft_putstr(ft_strstr(av[1], av[2]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_bzero ###\n", 17);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
 		bzero(zero, atoi(av[2]));
-		printf("%s\n", zero);
+		ft_putstr(zero);
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
 		ft_bzero(zero2, atoi(av[2]));
-		printf("%s\n\n", zero2);
+		ft_putstr(zero2);
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strchr ###\n", 18);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strchr(av[1], av[2][0]));
+		ft_putstr(strchr(av[1], av[2][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strchr(av[1], av[2][0]));
+		ft_putstr(ft_strchr(av[1], av[2][0]));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strrchr ###\n", 19);
 		write(1, "Test with the first and second argument.\n", 41);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strrchr(av[1], av[2][0]));
+		ft_putstr(strrchr(av[1], av[2][0]));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strrchr(av[1], av[2][0]));
+		ft_putstr(ft_strrchr(av[1], av[2][0]));
+		ft_putstr("\n\n");
 	}
 	if (ac == 4)
 	{
@@ -175,23 +244,29 @@ int		main(int ac, char **av)
 		write(1, "### ft_strncpy ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strncpy(ncpy, ncpy2, atoi(av[3])));
+		ft_putstr(strncpy(ncpy, ncpy2, atoi(av[3])));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strncpy(ncpy3, ncpy4, atoi(av[3])));
+		ft_putstr(ft_strncpy(ncpy3, ncpy4, atoi(av[3])));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strncat ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", strncat(ncat, ncat2, atoi(av[3])));
+		ft_putstr(strncat(ncat, ncat2, atoi(av[3])));
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strncat(ncat3, ncat4, atoi(av[3])));
+		ft_putstr(ft_strncat(ncat3, ncat4, atoi(av[3])));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_strnstr ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
 	/*	printf("%s\n", strnstr(av[1], av[2], atoi(av[3])));*/
+		ft_putstr("\n");
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_strnstr(av[1], av[2], atoi(av[3])));
+		ft_putstr(ft_strnstr(av[1], av[2], atoi(av[3])));
+		ft_putstr("\n\n");
 
 		write(1, "### ft_memset ###\n", 18);
 		write(1, "Test with the first, second and third argument.\n", 48);
