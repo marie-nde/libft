@@ -88,6 +88,8 @@ int		main(int ac, char **av)
 		char *cat2 = ft_strdup(av[2]);
 		char *cat3 = ft_strdup(av[1]);
 		char *cat4 = ft_strdup(av[2]);
+		char *zero = ft_strdup(av[1]);
+		char *zero2 = ft_strdup(av[1]);
 
 		write(1, "### ft_strcmp ###\n", 18);
 		write(1, "Test with the first and second argument.\n", 41);
@@ -116,6 +118,29 @@ int		main(int ac, char **av)
 /*		printf("%s\n", strstr(av[1], av[2]));*/
 		write(1, "Your result : ", 14);
 		printf("%s\n\n", ft_strstr(av[1], av[2]));
+
+		write(1, "### ft_bzero ###\n", 17);
+		write(1, "Test with the first and second argument.\n", 41);
+		write(1, "Result expected : ", 18);
+		bzero(zero, atoi(av[2]));
+		printf("%s\n", zero);
+		write(1, "Your result : ", 14);
+		ft_bzero(zero2, atoi(av[2]));
+		printf("%s\n\n", zero2);
+
+		write(1, "### ft_strchr ###\n", 18);
+		write(1, "Test with the first and second argument.\n", 41);
+		write(1, "Result expected : ", 18);
+		printf("%s\n", strchr(av[1], av[2][0]));
+		write(1, "Your result : ", 14);
+		printf("%s\n\n", ft_strchr(av[1], av[2][0]));
+
+		write(1, "### ft_strrchr ###\n", 19);
+		write(1, "Test with the first and second argument.\n", 41);
+		write(1, "Result expected : ", 18);
+		printf("%s\n", strrchr(av[1], av[2][0]));
+		write(1, "Your result : ", 14);
+		printf("%s\n\n", ft_strrchr(av[1], av[2][0]));
 	}
 	if (ac == 4)
 	{
@@ -131,8 +156,14 @@ int		main(int ac, char **av)
 		char *move2 = ft_strdup(av[2]);
 		char *move3 = ft_strdup(av[1]);
 		char *move4 = ft_strdup(av[2]);
-		char *chr = ft_strdup(av[1]);
+/*		char *chr = ft_strdup(av[1]);*/
 		char *chr2 = ft_strdup(av[1]);
+		char *s1 = ft_strdup(av[1]);
+		char *s2 = ft_strdup(av[2]);
+		char *ncat = ft_strdup(av[1]);
+		char *ncat2 = ft_strdup(av[2]);
+		char *ncat3 = ft_strdup(av[1]);
+		char *ncat4 = ft_strdup(av[2]);
 
 		write(1, "### ft_strncmp ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
@@ -148,6 +179,13 @@ int		main(int ac, char **av)
 		write(1, "Your result : ", 14);
 		printf("%s\n\n", ft_strncpy(ncpy3, ncpy4, atoi(av[3])));
 
+		write(1, "### ft_strncat ###\n", 19);
+		write(1, "Test with the first, second and third argument.\n", 48);
+		write(1, "Result expected : ", 18);
+		printf("%s\n", strncat(ncat, ncat2, atoi(av[3])));
+		write(1, "Your result : ", 14);
+		printf("%s\n\n", ft_strncat(ncat3, ncat4, atoi(av[3])));
+
 		write(1, "### ft_strnstr ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
@@ -158,30 +196,37 @@ int		main(int ac, char **av)
 		write(1, "### ft_memset ###\n", 18);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", memset(set, av[2][0], atoi(av[3])));
+		printf("%p\n", memset(set, av[2][0], atoi(av[3])));
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_memset(set2, av[2][0], atoi(av[3])));
+		printf("%p\n\n", ft_memset(set2, av[2][0], atoi(av[3])));
 
 		write(1, "### ft_memcpy ###\n", 18);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", memcpy(memcpy1, memcpy2, atoi(av[3])));
+		printf("%p\n", memcpy(memcpy1, memcpy2, atoi(av[3])));
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_memcpy(memcpy1, memcpy2, atoi(av[3])));
+		printf("%p\n\n", ft_memcpy(memcpy1, memcpy2, atoi(av[3])));
 
 		write(1, "### ft_memmove ###\n", 19);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
-		printf("%s\n", memmove(move, move2, atoi(av[3])));
+		printf("%p\n", memmove(move, move2, atoi(av[3])));
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_memmove(move3, move4, atoi(av[3])));
+		printf("%p\n\n", ft_memmove(move3, move4, atoi(av[3])));
 
 		write(1, "### ft_memchr ###\n", 18);
 		write(1, "Test with the first, second and third argument.\n", 48);
 		write(1, "Result expected : ", 18);
 	/*	printf("%s\n", memchr(chr, av[2][0], atoi(av[3])));*/
 		write(1, "Your result : ", 14);
-		printf("%s\n\n", ft_memchr(chr2, av[2][0], atoi(av[3])));
+		printf("%p\n\n", ft_memchr(chr2, av[2][0], atoi(av[3])));
+
+		write(1, "### ft_memcmp ###\n", 18);
+		write(1, "Test with the first, second and third argument.\n", 48);
+		write(1, "Result expected : ", 18);
+		printf("%d\n", memcmp(s1, s2, atoi(av[3])));
+		write(1, "Your result : ", 14);
+		printf("%d\n\n", ft_memcmp(s1, s2, atoi(av[3])));
 	}
 	/* ne marche pas
 	if (ac == 5)
