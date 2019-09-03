@@ -15,6 +15,6 @@ int		ft_alpha(int c)
 int		ft_isalnum(int c)
 {
 	if (ft_digit(c) == 1 || ft_alpha(c) == 1)
-		return (1);
+		return (8);
 	return (0);
 }
