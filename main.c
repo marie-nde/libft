@@ -45,6 +45,12 @@ int		main(int ac, char **av)
 		ft_putstr(clr);
 		ft_putstr("\n\n");
 
+		ft_putstr("### ft_strtrim ###\n");
+		ft_putstr("Returns a copy of the first argument without spaces at the beginning and the end of the string if possible.\n");
+		ft_putstr("Your result : \"");
+		ft_putstr(ft_strtrim(av[1]));
+		ft_putstr("\"\n\n");
+
 		write(1, "### ft_strlen ###\n", 18);
 		ft_putstr("Display the size of the first argument.\n");
 		write(1, "Result expected : ", 18);
