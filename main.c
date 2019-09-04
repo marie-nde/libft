@@ -169,11 +169,33 @@ int		main(int ac, char **av)
 		char *cat4 = ft_strdup(av[2]);
 		char *zero = ft_strdup(av[1]);
 		char *zero2 = ft_strdup(av[1]);
+		char **tab;
+		int i = 0;
 
 		ft_putstr("### ft_strequ ###\n");
 		ft_putstr("Compares the first and second argument and returns 1 if they are equal.\n");
 		ft_putstr("Your result : ");
 		ft_putnbr(ft_strequ(av[1], av[2]));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_strjoin ###\n");
+		ft_putstr("Concatenates the first and second argument and returns this new string.\n");
+		ft_putstr("Your result : ");
+		ft_putstr(ft_strjoin(av[1], av[2]));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_strsplit ###\n");
+		ft_putstr("Returns a table of the first string separated by the first character of the second argument.\n");
+		ft_putstr("Your result : ");
+		tab = ft_strsplit(av[1], av[2][0]);
+		while (tab[i] != NULL)
+		{
+			ft_putstr("\"");
+			ft_putstr(tab[i++]);
+			ft_putstr("\", ");
+		}
+		if (tab[i] == NULL)
+			ft_putstr("(null)");
 		ft_putstr("\n\n");
 
 		write(1, "### ft_strcmp ###\n", 18);
