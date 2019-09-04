@@ -1,7 +1,5 @@
 #include "libft.h"
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 
 int		ft_is_charset(char c, char i)
 {

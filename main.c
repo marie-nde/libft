@@ -59,6 +59,12 @@ int		main(int ac, char **av)
 		write(1, new, ft_atoi(av[1]));
 		ft_putstr("\"\n\n");
 
+		ft_putstr("### ft_itoa ###\n");
+		ft_putstr("Converts an int into a string.\n");
+		ft_putstr("Your result : ");
+		ft_putstr(ft_itoa(ft_atoi(av[1])));
+		ft_putstr("\n\n");
+
 		write(1, "### ft_strlen ###\n", 18);
 		ft_putstr("Display the size of the first argument.\n");
 		write(1, "Result expected : ", 18);
