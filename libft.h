@@ -36,5 +36,9 @@ void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
 void	ft_strclr(char *s);
 char	*ft_strtrim(char const *s);
+char	*ft_strnew(size_t size);
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif

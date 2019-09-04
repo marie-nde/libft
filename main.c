@@ -13,6 +13,7 @@ int		main(int ac, char **av)
 		char c = av[1][0];
 		char d = av[1][0];
 		char *clr = ft_strdup(av[1]);
+		char *new;
 	
 		ft_putstr("### ft_putchar ###\n");
 		ft_putstr("Display the first character of the first argument.\n");
@@ -40,15 +41,22 @@ int		main(int ac, char **av)
 
 		ft_putstr("### ft_strclr ###\n");
 		ft_putstr("Takes the first argument and returns a string full of backslash 0.\n");
-		ft_putstr("Your result : ");
+		ft_putstr("Your result : \"");
 		ft_strclr(clr);
-		ft_putstr(clr);
-		ft_putstr("\n\n");
+		write(1, clr, ft_strlen(av[1]));
+		ft_putstr("\"\n\n");
 
 		ft_putstr("### ft_strtrim ###\n");
 		ft_putstr("Returns a copy of the first argument without spaces at the beginning and the end of the string if possible.\n");
 		ft_putstr("Your result : \"");
 		ft_putstr(ft_strtrim(av[1]));
+		ft_putstr("\"\n\n");
+
+		ft_putstr("### ft_strnew ###\n");
+		ft_putstr("Returns a new string of size n, full of backlash 0.\n");
+		ft_putstr("Your result : \"");
+		new = ft_strnew(ft_atoi(av[1]));
+		write(1, new, ft_atoi(av[1]));
 		ft_putstr("\"\n\n");
 
 		write(1, "### ft_strlen ###\n", 18);
@@ -162,6 +170,12 @@ int		main(int ac, char **av)
 		char *zero = ft_strdup(av[1]);
 		char *zero2 = ft_strdup(av[1]);
 
+		ft_putstr("### ft_strequ ###\n");
+		ft_putstr("Compares the first and second argument and returns 1 if they are equal.\n");
+		ft_putstr("Your result : ");
+		ft_putnbr(ft_strequ(av[1], av[2]));
+		ft_putstr("\n\n");
+
 		write(1, "### ft_strcmp ###\n", 18);
 		ft_putstr("Compares the first and second argument.\n");
 		write(1, "Result expected : ", 18);
@@ -197,23 +211,23 @@ int		main(int ac, char **av)
 		ft_putstr("\n\n");
 
 		write(1, "### ft_bzero ###\n", 17);
-		ft_putstr("Fills n bytes of backslash 0.\n");
+		ft_putstr("Fills n bytes with backslash 0.\n");
 		ft_putstr("Result expected : Before : ");
 		ft_putstr(zero);
 		ft_putstr(", ");
 		ft_putnbr(ft_atoi(av[2]));
-		ft_putstr("\nAfter : ");
+		ft_putstr("\nAfter : \"");
 		bzero(zero, atoi(av[2]));
-		ft_putstr(zero);
-		ft_putstr("\n");
+		write(1, zero, ft_strlen(av[1]));
+		ft_putstr("\"\n");
 		ft_putstr("Your result : Before : ");
 		ft_putstr(zero2);
 		ft_putstr(", ");
 		ft_putnbr(ft_atoi(av[2]));
-		ft_putstr("\nAfter : ");
+		ft_putstr("\nAfter : \"");
 		ft_bzero(zero2, atoi(av[2]));
-		ft_putstr(zero2);
-		ft_putstr("\n\n");
+		write(1, zero2, ft_strlen(av[1]));
+		ft_putstr("\"\n\n");
 
 		write(1, "### ft_strchr ###\n", 18);
 		ft_putstr("Search the first character of the second argument in the first string.\n");
@@ -255,6 +269,18 @@ int		main(int ac, char **av)
 		char *ncat2 = ft_strdup(av[2]);
 		char *ncat3 = ft_strdup(av[1]);
 		char *ncat4 = ft_strdup(av[2]);
+
+		ft_putstr("### ft_strnequ ###\n");
+		ft_putstr("Compares the first and second argument for n bytes and returns 1 if they are equal.\n");
+		ft_putstr("Your result : ");
+		ft_putnbr(ft_strnequ(av[1], av[2], ft_atoi(av[3])));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_strsub ###\n");
+		ft_putstr("Copies the first string from an index (2nd arg) for n bytes (3rd arg) and returns the new string.\n");
+		ft_putstr("Your result : \"");
+		ft_putstr(ft_strsub(av[1], ft_atoi(av[2]), ft_atoi(av[3])));
+		ft_putstr("\"\n\n");
 
 		write(1, "### ft_strncmp ###\n", 19);
 		ft_putstr("Compares the first, second and third argument.\n");
