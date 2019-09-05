@@ -20,27 +20,29 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
+	long	nb;
 
-	if (n >= 0)
+	nb = n;
+	if (nb >= 0)
 	{
-		if (!(str = (char*)malloc(sizeof(char) * ft_count(n) + 1)))
+		if (!(str = (char*)malloc(sizeof(char) * ft_count(nb) + 1)))
 			return (NULL);
 	}
-	if (n < 0)
+	if (nb < 0)
 	{
-		if (!(str = (char*)malloc(sizeof(char) * ft_count(n * -1) + 2)))
+		if (!(str = (char*)malloc(sizeof(char) * ft_count(nb * -1) + 2)))
 			return (NULL);
-		n = n * -1;
+		nb = nb * -1;
 		str[0] = '-';
 	}
-	i = ft_count(n) + 1;
+	i = ft_count(nb) + 1;
 	str[i + 1] = '\0';
-	while (n > 9)
+	while (nb > 9)
 	{
-		str[i] = (n % 10) + '0';
-		n = n / 10;
+		str[i] = (nb % 10) + '0';
+		nb = nb / 10;
 		i--;
 	}
-	str[i] = (n % 10) + '0';
+	str[i] = (nb % 10) + '0';
 	return (str);
 }

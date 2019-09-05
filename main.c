@@ -14,7 +14,7 @@ int		main(int ac, char **av)
 		char d = av[1][0];
 		char *clr = ft_strdup(av[1]);
 		char *new;
-	
+
 		ft_putstr("### ft_putchar ###\n");
 		ft_putstr("Display the first character of the first argument.\n");
 		ft_putstr("Your result : ");
@@ -66,6 +66,25 @@ int		main(int ac, char **av)
 		ft_putstr("Converts an int into a string.\n");
 		ft_putstr("Your result : ");
 		ft_putstr(ft_itoa(ft_atoi(av[1])));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_memalloc ###\n");
+		ft_putstr("Returns a clean string initialized at 0 of size n.\n");
+		ft_putstr("Your result : \"");
+		write(1, ft_memalloc(ft_atoi(av[1])), ft_atoi(av[1]));
+		ft_putstr("\"\n\n");
+
+		ft_putstr("### ft_memdel ###\n");
+		ft_putstr("Clears the pointer sent and puts it to NULL.\n");
+		ft_putstr("ft_memdel can't be tested.\n\n");
+
+		ft_putstr("### ft_strdel ###\n");
+		ft_putstr("Clears the string sent and puts it to NULL.\n");
+		ft_putstr("ft_strdel can't be tested.\n\n");
+
+		ft_putstr("### ft_striter ###\n");
+		ft_putstr("Applies the function f to each character of the string. Here, f adds 1 to each character in the ascii table.\n");
+		ft_putstr("Your result : ");
 		ft_putstr("\n\n");
 
 		write(1, "### ft_strlen ###\n", 18);
