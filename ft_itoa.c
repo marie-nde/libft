@@ -1,14 +1,16 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int		ft_count(int nb)
+/*not working*/
+
+int		ft_count(int n)
 {
 	int compt;
 
 	compt = 0;
-	while (nb > 0)
+	while (n > 9)
 	{
-		nb = nb / 10;
+		n = n / 10;
 		compt++;
 	}
 	return (compt);
@@ -17,31 +19,28 @@ int		ft_count(int nb)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		end;
+	int		i;
 
 	if (n >= 0)
+	{
 		if (!(str = (char*)malloc(sizeof(char) * ft_count(n) + 1)))
 			return (NULL);
+	}
 	if (n < 0)
 	{
 		if (!(str = (char*)malloc(sizeof(char) * ft_count(n * -1) + 2)))
 			return (NULL);
+		n = n * -1;
 		str[0] = '-';
-		n *= -1;
 	}
-	end = ft_count(n);
-	if (n == 0)
-	{
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
-	str[end + 1] = '\0';
+	i = ft_count(n) + 1;
+	str[i + 1] = '\0';
 	while (n > 9)
 	{
-		str[end] = (n % 10) + '0';
+		str[i] = (n % 10) + '0';
 		n = n / 10;
-		end--;
+		i--;
 	}
+	str[i] = (n % 10) + '0';
 	return (str);
 }

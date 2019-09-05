@@ -17,8 +17,6 @@ void	ft_putnbr(int n)
 		nb = -nb;
 	}
 	if (nb > 9)
-	{
 		ft_putnbr(nb / 10);
-	}
 	ft_write((nb % 10) + '0');
 }

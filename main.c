@@ -52,12 +52,15 @@ int		main(int ac, char **av)
 		ft_putstr(ft_strtrim(av[1]));
 		ft_putstr("\"\n\n");
 
-		ft_putstr("### ft_strnew ###\n");
-		ft_putstr("Returns a new string of size n, full of backlash 0.\n");
-		ft_putstr("Your result : \"");
-		new = ft_strnew(ft_atoi(av[1]));
-		write(1, new, ft_atoi(av[1]));
-		ft_putstr("\"\n\n");
+		if (ft_atoi(av[1]) < 100)
+		{
+			ft_putstr("### ft_strnew ###\n");
+			ft_putstr("Returns a new string of size n, full of backlash 0.\n");
+			ft_putstr("Your result : \"");
+			new = ft_strnew(ft_atoi(av[1]));
+			write(1, new, ft_atoi(av[1]));
+			ft_putstr("\"\n\n");
+		}
 
 		ft_putstr("### ft_itoa ###\n");
 		ft_putstr("Converts an int into a string.\n");
@@ -202,6 +205,30 @@ int		main(int ac, char **av)
 		}
 		if (tab[i] == NULL)
 			ft_putstr("(null)");
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putchar_fd ###\n");
+		ft_putstr("Display a char c on the file descriptor fd.\n");
+		ft_putstr("Your result : ");
+		ft_putchar_fd(av[1][0], ft_atoi(av[2]));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putstr_fd ###\n");
+		ft_putstr("Display a string on the file descriptor fd.\n");
+		ft_putstr("Your result : ");
+		ft_putstr_fd(av[1], ft_atoi(av[2]));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putendl_fd ###\n");
+		ft_putstr("Display a string followed by a newline on the file descriptor fd.\n");
+		ft_putstr("Your result : ");
+		ft_putendl_fd(av[1], ft_atoi(av[2]));
+		ft_putstr("\n\n");
+
+		ft_putstr("### ft_putnbr_fd ###\n");
+		ft_putstr("Display an int on the file descriptor fd.\n");
+		ft_putstr("Your result : ");
+		ft_putnbr_fd(ft_atoi(av[1]), ft_atoi(av[2]));
 		ft_putstr("\n\n");
 
 		write(1, "### ft_strcmp ###\n", 18);
