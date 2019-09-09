@@ -13,7 +13,6 @@ SRCS 		= ft_memset.c \
 			ft_strncpy.c \
 			ft_strcat.c \
 			ft_strncat.c \
-			ft_strlcat.c \
 			ft_strchr.c \
 			ft_strrchr.c \
 			ft_strstr.c \
@@ -43,7 +42,6 @@ SRCS 		= ft_memset.c \
 			ft_strjoin.c \
 			ft_strtrim.c \
 			ft_strsplit.c \
-			ft_itoa.c \
 			ft_putchar.c \
 			ft_putstr.c \
 			ft_putendl.c \
@@ -53,29 +51,24 @@ SRCS 		= ft_memset.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c
 
-CC 			= ar rc
+AR 			= ar rc
 
 CFLAGS 		= -Wall -Wextra -Werror
 
 OBJS 		= $(SRCS:.c=.o)
-
-HEADER 		= libft.h
 
 RM 			= rm -rf
 
 all :
 			@make $(NAME)
 
-$(NAME) :
-			$(OBJS)
-			$(CC) -o $(NAME) $(OBJS) $(HEADER)
+$(NAME) :	$(OBJS) 
+			$(AR) $(NAME) $(OBJS)
 
 clean :
 			$(RM) $(OBJS)
 
-fclean :
-			clean
+fclean :	clean
 			$(RM) $(NAME)
 
-re :
-			fclean all
+re :		fclean all

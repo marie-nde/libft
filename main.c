@@ -62,11 +62,11 @@ int		main(int ac, char **av)
 			ft_putstr("\"\n\n");
 		}
 
-		ft_putstr("### ft_itoa ###\n");
+/*		ft_putstr("### ft_itoa ###\n");
 		ft_putstr("Converts an int into a string.\n");
 		ft_putstr("Your result : ");
 		ft_putstr(ft_itoa(ft_atoi(av[1])));
-		ft_putstr("\n\n");
+		ft_putstr("\n\n");*/
 
 		ft_putstr("### ft_memalloc ###\n");
 		ft_putstr("Returns a clean string initialized at 0 of size n.\n");
