@@ -1,14 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/07 10:42:17 by mnaude            #+#    #+#             */
+/*   Updated: 2019/10/07 11:18:47 by mnaude           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-int		ft_count_space(char const *s)
+int		ft_count_space(char const *s, char const *set)
 {
 	int compt;
 	int i;
+	int j;
 
 	i = 0;
+	j = 0;
 	compt = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (ft_space(s[i], set) == 1)
 	{
 		compt++;
 		i++;
@@ -16,7 +30,7 @@ int		ft_count_space(char const *s)
 	while (s[i])
 		i++;
 	i--;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (ft_space(s[i],set) == 1)
 	{
 		compt++;
 		i--;
@@ -34,14 +48,21 @@ int		ft_length_str(char const *str)
 	return (i);
 }
 
-int		ft_space(char c)
+int		ft_space(char c, const char *set)
 {
-	if (c == ' ' || c == '\t' || c == '\n')
-		return (1);
+	int j;
+
+	j = 0;
+	while (set[j])
+	{
+		if (c == set[j])
+			return (1);
+		j++;
+	}
 	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int			i;
 	int			j;
@@ -50,14 +71,14 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
-	compt = ft_count_space(s);
+	compt = ft_count_space(s1, set);
 	if (!(cpy = (char*)malloc(sizeof(char) * ft_length_str(s) - compt + 1)))
 		return (NULL);
-	while (ft_space(s[i]) == 1)
+	while (ft_space(s1[i], set) == 1)
 		i++;
-	while (ft_space(s[i]) == 0 && s[i])
+	while (ft_space(s1[i], set) == 0 && s[i])
 	{
-		cpy[j] = s[i];
+		cpy[j] = s1[i];
 		j++;
 		i++;
 	}

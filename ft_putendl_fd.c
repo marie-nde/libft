@@ -1,21 +1,13 @@
-#include "libft.h"
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/07 10:54:48 by mnaude            #+#    #+#             */
+/*   Updated: 2019/10/07 10:54:49 by mnaude           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_ptchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
-void	ft_putendl_fd(char const *s, int fd)
-{
-	int i;
-
-	i = 0;
-	while (s && s[i])
-	{
-		ft_ptchar_fd(s[i], fd);
-		i++;
-	}
-	if (s)
-		ft_ptchar_fd('\n', fd);
-}

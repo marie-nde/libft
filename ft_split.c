@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/07 10:41:55 by mnaude            #+#    #+#             */
+/*   Updated: 2019/10/07 11:19:16 by mnaude           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -46,7 +58,7 @@ int		ft_count_words(char const *str, char c)
 	return (compt);
 }
 
-void	ft_split(char const *s, char c, char **retour)
+void	ft_strsplit(char const *s, char c, char **retour)
 {
 	char	*tab;
 	int		i;
@@ -58,7 +70,8 @@ void	ft_split(char const *s, char c, char **retour)
 	while (k < ft_count_words(s, c))
 	{
 		j = 0;
-		if (!(tab = (char*)malloc(sizeof(char) * ft_count_letters(s + i, c) + 1)))
+		if (!(tab = (char*)malloc(sizeof(char) *
+						ft_count_letters(s + i, c) + 1)))
 			return ;
 		while (ft_is_charset(c, s[i]) == 1)
 			i++;
@@ -71,7 +84,7 @@ void	ft_split(char const *s, char c, char **retour)
 	retour[k] = NULL;
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char **retour;
 

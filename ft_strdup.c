@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/07 10:40:08 by mnaude            #+#    #+#             */
+/*   Updated: 2019/10/07 10:46:14 by mnaude           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int		ft_length(const char *str)
@@ -12,8 +24,8 @@ int		ft_length(const char *str)
 
 char	*ft_strdup(const char *s)
 {
-	char *dup;
-	int i;
+	char	*dup;
+	int		i;
 
 	i = 0;
 	if (s == NULL)
