@@ -6,8 +6,22 @@
 /*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:54:48 by mnaude            #+#    #+#             */
-/*   Updated: 2019/10/07 10:54:49 by mnaude           ###   ########.fr       */
+/*   Updated: 2019/10/10 10:05:59 by mnaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_putendl_fd(char *s, int fd)
+{
+	int i;
+
+	i = 0;
+	while (s && s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	if (s)
+		ft_putchar_fd('\n', fd);
+}

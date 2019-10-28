@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 10:42:09 by mnaude            #+#    #+#             */
-/*   Updated: 2019/10/17 15:14:13 by mnaude           ###   ########.fr       */
+/*   Created: 2019/10/10 11:06:55 by mnaude            #+#    #+#             */
+/*   Updated: 2019/10/25 11:57:21 by mnaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*str;
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	while (i < len && ft_strlen(s) > start)
-	{
-		str[i] = s[start];
+	if (n == 0)
+		return (0);
+	if (s1 && !s2)
+		return (*s1);
+	if (s2 && !s1)
+		return (*s2 * -1);
+	while (i < n - 1 && ((unsigned char*)s1)[i] == ((unsigned char*)s2)[i]
+	&& s1[i] && s2[i])
 		i++;
-		start++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
 }

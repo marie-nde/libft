@@ -6,55 +6,88 @@
 /*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:37:08 by mnaude            #+#    #+#             */
-/*   Updated: 2019/10/07 10:37:10 by mnaude           ###   ########.fr       */
+/*   Updated: 2019/10/18 11:14:09 by mnaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-/*not working*/
-
-int		ft_count(int n)
+int		ft_count(long nb)
 {
 	int compt;
 
 	compt = 0;
-	while (n > 9)
+	if (nb > 0 && nb < 10)
+		return (1);
+	while (nb > 0)
 	{
-		n = n / 10;
+		nb /= 10;
 		compt++;
 	}
 	return (compt);
 }
 
-char	*ft_itoa(int n)
+char	*ft_tostring(char *str, long nb, int i)
 {
-	char	*str;
-	int		i;
-	long	nb;
-
-	nb = n;
-	if (nb >= 0)
-	{
-		if (!(str = (char*)malloc(sizeof(char) * ft_count(nb) + 1)))
-			return (NULL);
-	}
 	if (nb < 0)
 	{
-		if (!(str = (char*)malloc(sizeof(char) * ft_count(nb * -1) + 2)))
-			return (NULL);
 		nb = nb * -1;
-		str[0] = '-';
+		while (nb > 0)
+		{
+			str[i--] = (nb % 10) + '0';
+			nb = nb / 10;
+		}
 	}
-	i = ft_count(nb) + 1;
-	str[i + 1] = '\0';
-	while (nb > 9)
+	if (nb > 0)
+		while (nb > 0)
+		{
+			str[--i] = (nb % 10) + '0';
+			nb = nb / 10;
+		}
+	return (str);
+}
+
+char	*ft_if(char *str, long nb, int i)
+{
+	if (nb == 0)
 	{
-		str[i] = (nb % 10) + '0';
-		nb = nb / 10;
-		i--;
+		if (!(str = (char*)malloc(sizeof(char) * 2)))
+			return (NULL);
+		str[0] = '0';
+		str[1] = '\0';
 	}
-	str[i] = (nb % 10) + '0';
+	else if (nb > 0)
+	{
+		if (!(str = (char*)malloc(sizeof(char) * i + 1)))
+			return (NULL);
+		str[i] = '\0';
+	}
+	else if (nb < 0)
+	{
+		if (!(str = (char*)malloc(sizeof(char) * i + 2)))
+			return (NULL);
+		str[0] = '-';
+		str[i + 1] = '\0';
+	}
+	str = ft_tostring(str, nb, i);
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	long	nb;
+	char	*str;
+	int		i;
+
+	nb = n;
+	str = NULL;
+	i = 0;
+	if (nb > 0)
+		i = ft_count(nb);
+	if (nb < 0)
+		i = ft_count(nb * -1);
+	str = ft_if(str, nb, i);
 	return (str);
 }

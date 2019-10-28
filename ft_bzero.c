@@ -6,7 +6,7 @@
 /*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:36:18 by mnaude            #+#    #+#             */
-/*   Updated: 2019/10/07 10:44:45 by mnaude           ###   ########.fr       */
+/*   Updated: 2019/10/25 11:19:40 by mnaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_bzero(void *s, size_t n)
 	char	*str;
 	size_t	i;
 
-	str = s;
+	str = (char*)s;
 	i = 0;
-	while (i < n)
+	while (s && i < n)
 	{
 		str[i] = '\0';
 		i++;

@@ -6,27 +6,15 @@
 /*   By: mnaude <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:36:26 by mnaude            #+#    #+#             */
-/*   Updated: 2019/10/07 10:36:29 by mnaude           ###   ########.fr       */
+/*   Updated: 2019/10/10 16:19:22 by mnaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_digit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int		ft_alpha(int c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 int		ft_isalnum(int c)
 {
-	if (ft_digit(c) == 1 || ft_alpha(c) == 1)
-		return (8);
+	if (ft_isdigit(c) == 1 || ft_isalpha(c) == 1)
+		return (1);
 	return (0);
 }
