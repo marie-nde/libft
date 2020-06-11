@@ -1,2 +1,2 @@
 # libft
-Libft at 42 school.
+A lot of useful functions in C for 42 school.
